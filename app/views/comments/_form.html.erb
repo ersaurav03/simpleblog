@@ -1,0 +1,21 @@
+<h3>Add Comments<h3>
+<%= form_for([@post, @post.comments.build])  do |f| %>
+    <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+    <% end %>
+    <p>
+    <%= f.label :userName %><br>
+    <%= f.text_field(:userName, {:class => 'form-control'}) %>
+    </p>
+
+    <p>
+    <%= f.label :body %><br>
+    <%= f.text_area(:body,{:class => 'form-control'}) %>
+    </p>
+
+    <p>
+    <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+<% end %>  

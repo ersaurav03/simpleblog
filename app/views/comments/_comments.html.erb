@@ -1,0 +1,13 @@
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <p><strong><%= comment.userName %></strong>: <%= comment.body%></p>
+    <%= link_to '[X]', [comment.post, comment], 
+method: :delete,
+data:{confirm: 'Are you sure to delete it?'}
+ %>
+   </ol>
+   </nav>
+    <% end %>
+<hr>

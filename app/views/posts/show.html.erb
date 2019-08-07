@@ -1,0 +1,13 @@
+<h1>JSMPJ Corporation</h1>
+<h2><%= @post.title %></h2>
+<h2><%= @post.body%></h2>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-primary' %>
+<%= link_to "Delete", post_path(@post), 
+method: :delete,
+data:{confirm: 'Are you sure to delete it?'},
+:class => 'btn btn-danger' %>
+<hr>
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>
+  

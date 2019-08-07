@@ -1,0 +1,17 @@
+<h1><%= @heading%></h1>
+<h3><%= @page%></h3>
+<p><%= @content%></p>
+<h3>Belog post</h3>
+<% @posts.each do |post| %>
+
+
+<div class="card">
+  
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text"><%= post.body %></p>
+    <%= link_to "Read More", post_path(post), :class => 'btn btn-info' %>
+  </div>
+</div>
+<br>
+<% end %>
